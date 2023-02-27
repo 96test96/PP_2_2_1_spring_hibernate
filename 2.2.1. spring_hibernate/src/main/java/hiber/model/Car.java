@@ -17,11 +17,10 @@ public class Car {
     @OneToOne(mappedBy = "car",fetch = FetchType.LAZY)
     private User user;
 
-    public void setUser(User user) {
-        this.user = user;
-    }
+    public void setUser(User user) { this.user = user; }
 
     public Car() {}
+
     public Car(String model, int series) {
         this.model = model;
         this.series = series;
