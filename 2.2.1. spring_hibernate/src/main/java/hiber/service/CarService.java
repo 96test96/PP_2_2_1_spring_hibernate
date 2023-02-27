@@ -6,8 +6,7 @@ import hiber.model.Car;
 import hiber.model.User;
 
 public interface CarService {
-
     void addCar(Car car);
-   public User getUserCar(String model, int series);
-    }
+    public User getUserCar(String model, int series);
+}
 

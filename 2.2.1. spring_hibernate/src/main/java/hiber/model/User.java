@@ -19,29 +19,26 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   public Car getCar() {
-      return car;
-   }
-
-   @OneToOne
-   @MapsId
-   @JoinColumn(name = "car_id")
-   private Car car;
-
-
-   public User() {}
-   
-   public User(String firstName, String lastName, String email,Car car) {
+   public User(String firstName, String lastName, String email, Car car) {
       this.firstName = firstName;
       this.lastName = lastName;
       this.email = email;
       this.car = car;
    }
 
+   public Car getCar() {
+      return car;
+   }
+
+   @OneToOne(cascade = CascadeType.ALL)
+   @JoinColumn(name = "car_id")
+   private Car car;
+
+   public User() {}
+
    public Long getId() {
       return id;
    }
-
    public void setId(Long id) {
       this.id = id;
    }

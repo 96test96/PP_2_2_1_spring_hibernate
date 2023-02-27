@@ -8,12 +8,19 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Column(name = "model")
     private String model;
+
     @Column(name = "series")
     private int series;
-    @OneToOne(mappedBy = "car")
+    @OneToOne(mappedBy = "car",fetch = FetchType.LAZY)
     private User user;
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Car() {}
     public Car(String model, int series) {
         this.model = model;
