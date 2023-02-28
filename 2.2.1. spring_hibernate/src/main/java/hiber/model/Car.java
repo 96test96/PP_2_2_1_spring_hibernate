@@ -15,11 +15,6 @@ public class Car {
     @Column(name = "series")
     private int series;
 
-
-//    private User user;
-//
-//    public void setUser(User user) { this.user = user; }
-
     public Car() {}
 
     public Car(String model, int series) {
