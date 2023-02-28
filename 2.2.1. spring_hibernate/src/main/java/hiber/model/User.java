@@ -7,7 +7,6 @@ import javax.persistence.*;
 public class User {
 
    @Id
-   @GeneratedValue(strategy= GenerationType.IDENTITY)
    private Long id;
 
    @Column(name = "name")
@@ -30,8 +29,9 @@ public class User {
       return car;
    }
 
-   @OneToOne(cascade = CascadeType.ALL)
-   @JoinColumn(name = "car_id")
+   @OneToOne
+   @MapsId
+   @JoinColumn(name = "id")
    private Car car;
 
    public User() {}

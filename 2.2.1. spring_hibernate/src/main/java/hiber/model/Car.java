@@ -14,10 +14,11 @@ public class Car {
 
     @Column(name = "series")
     private int series;
-    @OneToOne(mappedBy = "car",fetch = FetchType.LAZY)
-    private User user;
 
-    public void setUser(User user) { this.user = user; }
+
+//    private User user;
+//
+//    public void setUser(User user) { this.user = user; }
 
     public Car() {}
 
